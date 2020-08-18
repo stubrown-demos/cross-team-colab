@@ -21,10 +21,11 @@ spec:
         eventTrigger jmespathQuery("eventName=='helloWorld'")
     }
 
-    stages {
+     stages {
         stage('Example') {
             steps {
-                echo 'received helloWorld'
+                echo 'sending helloWorld'
+                publishEvent simpleEvent('helloWorld')
             }
         }
     }
